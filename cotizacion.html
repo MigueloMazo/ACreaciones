@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Nombre de la Empresa</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS externo -->
+</head>
+<body>
+    <!-- Encabezado con el logo y la barra de navegación -->
+    <header>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Nuestro Trabajo</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="cotizacion.html">Cotiza tu Pedido</a></li>
+                    <li class="contacto"><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo">
+            <img src="https://i.postimg.cc/d1Tg3Gdc/ACreaciones.jpg" alt="Logo de la Empresa">
+        </div>
+    </header>
+    <div class="container">
+        <h1>Cotiza tu Pedido</h1>
+        
+        <form id="cotizacionForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" placeholder="Escribe tu correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" placeholder="Escribe tu dirección" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" placeholder="Escribe tu teléfono" required>
+            </div>
+
+            <div class="productos">
+                <h2>Selecciona tus productos para la Ancheta:</h2>
+                <div class="productos-list">
+                    <label><input type="checkbox" value="5.99" class="producto"> Mermelada de Fresa - $5.99</label>
+                    <label><input type="checkbox" value="8.99" class="producto"> Café Orgánico - $8.99</label>
+                    <label><input type="checkbox" value="4.50" class="producto"> Galletas de Avena - $4.50</label>
+                    <label><input type="checkbox" value="3.99" class="producto"> Té Verde - $3.99</label>
+                    <label><input type="checkbox" value="6.25" class="producto"> Almendras Saladas - $6.25</label>
+                    <label><input type="checkbox" value="9.50" class="producto"> Miel Orgánica - $9.50</label>
+                    <label><input type="checkbox" value="2.75" class="producto"> Salsa de Soja - $2.75</label>
+                    <label><input type="checkbox" value="10.00" class="producto"> Frutos Secos - $10.00</label>
+                    <label><input type="checkbox" value="7.50" class="producto"> Jabón Artesanal - $7.50</label>
+                    <label><input type="checkbox" value="15.99" class="producto"> Aceite de Oliva - $15.99</label>
+                    <label><input type="checkbox" value="5.75" class="producto"> Galletas de Chocolate - $5.75</label>
+                    <label><input type="checkbox" value="9.25" class="producto"> Pasta Gourmet - $9.25</label>
+                    <label><input type="checkbox" value="6.99" class="producto"> Mantequilla de Maní - $6.99</label>
+                    <label><input type="checkbox" value="8.25" class="producto"> Harina de Almendra - $8.25</label>
+                    <label><input type="checkbox" value="2.00" class="producto"> Chicles Gourmet - $2.00</label>
+                    <label><input type="checkbox" value="11.50" class="producto"> Cerveza Artesanal - $11.50</label>
+                    <label><input type="checkbox" value="3.50" class="producto"> Salsa BBQ - $3.50</label>
+                    <label><input type="checkbox" value="6.00" class="producto"> Galletas de Coco - $6.00</label>
+                    <label><input type="checkbox" value="12.00" class="producto"> Aceitunas Rellenas - $12.00</label>
+                    <label><input type="checkbox" value="4.20" class="producto"> Galletas Integrales - $4.20</label>
+                </div>
+            </div>
+
+            <div class="total-container">
+                <h2>Total: $<span id="total">0.00</span></h2>
+                <button type="button" class="button" id="cotizar">Cotizar</button>
+            </div>
+        </form>
+
+        <div class="pasarela-pago" id="pasarelaPago">
+            <h3>Selecciona tu método de pago:</h3>
+            <label><input type="radio" name="metodoPago" value="tarjeta" checked> Tarjeta de Crédito</label>
+            <label><input type="radio" name="metodoPago" value="paypal"> PayPal</label>
+            <button type="button" class="button" id="pagar">Pagar</button>
+        </div>
+
+        <div class="mensaje" id="mensaje" style="display:none;">
+            <h2>Tu compra fue realizada exitosamente!</h2>
+        </div>
+    </div>
+        <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 AC Creaciones. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const productos = document.querySelectorAll('.producto');
+        const totalSpan = document.getElementById('total');
+        const cotizarButton = document.getElementById('cotizar');
+        const pasarelaPago = document.getElementById('pasarelaPago');
+        const mensaje = document.getElementById('mensaje');
+        const cotizacionForm = document.getElementById('cotizacionForm');
+
+        productos.forEach(producto => {
+            producto.addEventListener('change', () => {
+                let total = 0;
+                productos.forEach(item => {
+                    if (item.checked) {
+                        total += parseFloat(item.value);
+                    }
+                });
+                totalSpan.innerText = total.toFixed(2);
+            });
+        });
+
+        cotizarButton.addEventListener('click', () => {
+            pasarelaPago.style.display = 'block';
+        });
+
+        document.getElementById('pagar').addEventListener('click', () => {
+            cotizacionForm.reset(); // Reinicia el formulario
+            totalSpan.innerText = '0.00'; // Reinicia el total
+            pasarelaPago.style.display = 'none'; // Oculta la pasarela de pago
+            mensaje.style.display = 'block'; // Muestra el mensaje de éxito
+        });
+    </script>
+</body>
+</html>

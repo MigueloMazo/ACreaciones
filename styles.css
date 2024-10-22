@@ -1,0 +1,389 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fondo blanco */
+    margin: 0;
+    padding: 0;
+    color: #1C1C1C; /* Texto en gris oscuro */
+}
+
+header {
+    margin-bottom: 25px; /* Espacio entre el header y el contenido principal */
+}
+
+/* Contenedor de navegación */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px; /* Espaciado entre los botones */
+}
+
+.nav-links li.contacto {
+    margin-left: auto; /* Este mueve el botón de "Contáctanos" al extremo derecho */
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 18px; /* Tamaño de texto más grande */
+    padding: 15px 25px; /* Hacer los botones más grandes */
+    background-color: #D9D9D9; /* Gris claro */
+    color: #1C1C1C; /* Texto en gris oscuro */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a:active {
+    background-color: #7D7D7D; /* Gris oscuro al hacer clic */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Logo */
+.logo {
+    margin-top: 20px;
+    text-align: center; /* Asegura que el logo esté centrado */
+}
+
+.logo img {
+    width: 400px; /* Tamaño grande del logo */
+    height: auto; /* Mantener proporción */
+}
+
+/* Sección de Nuestro Trabajo */
+.nuestro-trabajo {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.nuestro-trabajo h1 {
+    font-size: 36px;
+    color: #1C1C1C;
+    margin-bottom: 20px;
+}
+
+.nuestro-trabajo p {
+    font-size: 18px;
+    color: #7D7D7D;
+    margin-bottom: 40px;
+}
+
+/* Cuadro contenedor de productos */
+.productos-cuadro {
+    background-color: #F0F0F0; /* Fondo gris claro */
+    border: 2px solid #000000; /* Borde negro */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenedor de productos */
+.fila-productos {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.producto {
+    text-align: center;
+    width: 30%; /* Ocupa el 30% del ancho total */
+}
+
+.producto img {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    font-size: 16px;
+    color: #1C1C1C;
+    margin-top: 10px;
+}
+
+/* Sección de Productos */
+.productivo {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.productivo h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #1C1C1C;
+    margin-bottom: 20px;
+}
+
+.productivo p {
+    text-align: center;
+    font-size: 18px;
+    color: #7D7D7D;
+    margin-bottom: 40px;
+}
+
+/* Cuadro contenedor de productos con scroll */
+.productos-scrollable {
+    background-color: #F0F0F0; /* Fondo gris claro */
+    border: 2px solid #000000; /* Borde negro */
+    padding: 20px;
+    max-width: 800px;
+    max-height: 600px; /* Limitar la altura del contenedor */
+    overflow-y: scroll; /* Scroll vertical */
+    margin: 0 auto;
+}
+
+/* Fila de productos */
+.fila-productos {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.producto {
+    text-align: center;
+    width: 45%; /* Ocupa el 45% del ancho del contenedor */
+    background-color: #ffffff;
+    border: 1px solid #D9D9D9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    max-width: 150px;
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.nombre {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descripcion, .marca, .precio {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.precio {
+    font-weight: bold;
+    color: #1C1C1C;
+}
+
+
+/* Sección de Quiénes Somos */
+.quienes-somos {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.quienes-somos h1 {
+    font-size: 36px;
+    color: #1C1C1C;
+    margin-bottom: 20px;
+}
+
+.contenido-nosotros {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0; /* Fondo gris */
+    border: 2px solid #1C1C1C; /* Borde negro */
+    border-radius: 10px;
+}
+
+/* Estilos para el texto dentro del cuadro */
+.texto-cuadro {
+    max-width: 80%;
+}
+
+.texto-cuadro p {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #1C1C1C;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las imágenes a la derecha */
+.imagenes-lado {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagenes-lado img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Cotizacion de Pedidos*/
+
+.container {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center; /* Centrar todo el contenido */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 40%; /* Ajustado a 80% para centrar mejor */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+    margin: 0 auto; /* Centrando el input */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border: 1px solid #555;
+}
+
+.productos {
+    margin: 20px 0;
+    text-align: left; /* Alinear a la izquierda para mejor lectura */
+}
+
+.productos-list {
+    max-height: 200px; /* Altura máxima del contenedor de productos */
+    overflow-y: auto; /* Scroll si hay más productos */
+}
+
+.productos label {
+    display: block; /* Cada producto en nueva línea */
+    margin: 5px 0; /* Espaciado entre productos */
+}
+
+.productos-list input[type="checkbox"] {
+    width: 16px; /* Ajusta el ancho */
+    height: 16px; /* Ajusta la altura */
+    transform: scale(0.8); /* Reduce el tamaño visualmente */
+    margin-right: 5px; /* Espaciado entre el checkbox y el texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+.productos-list {
+    display: flex; /* Usar flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    justify-content: center; /* Centra los elementos en la fila */
+    max-height: 200px; /* Altura máxima del contenedor de productos */
+    overflow-y: auto; /* Scroll si hay más productos */
+}
+
+.productos label {
+    flex: 0 0 45%; /* Cada elemento ocupará el 45% del ancho del contenedor */
+    box-sizing: border-box; /* Para incluir padding y border en el tamaño total */
+    margin: 5px; /* Espaciado entre productos */
+}
+
+.total-container {
+    margin: 20px 0;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #777;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Margen superior */
+}
+
+.button:hover {
+    background-color: #444;
+}
+
+.pasarela-pago {
+    display: none;
+    margin-top: 20px;
+}
+
+.mensaje {
+    margin-top: 20px;
+    color: green; /* Color verde para el mensaje de éxito */
+}
+
+/* Contactenos*/
+
+.contacto-info {
+    text-align: center; /* Centra el contenido */
+    padding: 20px;
+}
+
+.info-container {
+    display: flex; /* Usa flexbox para alinear los elementos */
+    justify-content: center; /* Centra el contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 20px; /* Espacio entre los elementos */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor en la página */
+}
+
+.info-item {
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px;
+    width: 250px; /* Ancho fijo para cada item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: #f9f9f9; /* Fondo claro para los items */
+}
+
+h2 {
+    margin-bottom: 10px; /* Espaciado entre el título y el texto */
+}
+
+p {
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #D9D9D9;
+    padding: 10px;
+    color: #1C1C1C;
+    font-size: 14px;
+}
