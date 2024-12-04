@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACreaciones - Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Archivo CSS externo -->
+</head>
+<body>
+    <!-- Encabezado con el logo y la barra de navegación -->
+    <header>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Nuestro Trabajo</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="cotizacion.html">Cotiza tu Pedido</a></li>
+                    <li class="contacto"><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo">
+            <img src="https://i.postimg.cc/d1Tg3Gdc/ACreaciones.jpg" alt="Logo de la Empresa">
+        </div>
+    </header>
+    <div class="container">
+        <h1>Cotiza tu Pedido</h1>
+        
+        <form id="cotizacionForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" placeholder="Escribe tu correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" placeholder="Escribe tu dirección" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" placeholder="Escribe tu teléfono" required>
+            </div>
+
+            <div class="productos">
+                <h2>Selecciona tus productos para la Ancheta:</h2>
+                <form action="/cotizacion" method="POST">
+                    {% for producto in productos %}
+                        <label class="producto-item">
+                            <input type="checkbox" value="{{ producto[1] }}" class="producto"> {{ producto[0] }} - ${{ producto[1] }}
+                        </label><br>
+                    {% endfor %}
+                    <div class="total-container">
+                        <h2>Total: $<span id="total">0.00</span></h2>
+                        <button type="button" class="button" id="cotizar" onclick="mostrarPasarelaPago()">Cotizar</button>
+                    </div>
+                </form>
+            </div>
+        </form>
+
+        <div class="pasarela-pago" id="pasarelaPago">
+            <h3>Selecciona tu método de pago:</h3>
+            <label><input type="radio" name="metodoPago" value="tarjeta" checked> Tarjeta de Crédito</label>
+            <label><input type="radio" name="metodoPago" value="paypal"> PayPal</label>
+            <h3>Total a pagar: $<span id="totalPago"></span></h3>
+            <button type="button" class="button" id="pagar" onclick="registrarPedido()">Pagar</button>
+        </div>
+
+        <div id="detalles-compra"></div>
+    </div>
+        <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 AC Creaciones. Todos los derechos reservados.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='cotizacion.js') }}"></script>
+</body>
+</html>

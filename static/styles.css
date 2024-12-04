@@ -314,6 +314,23 @@ input[type="tel"]:focus {
     margin: 5px; /* Espaciado entre productos */
 }
 
+/* Estilo de cada elemento de producto */
+.producto-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.producto-item input {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
 .total-container {
     margin: 20px 0;
 }
